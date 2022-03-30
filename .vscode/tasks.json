@@ -6,15 +6,15 @@
         {
             "label": "compile slides",
             "type": "shell",
-            "command": "./compile.sh",
+            "command": "./compile.sh ${fileBasenameNoExtension}",
             "presentation": {
-                "echo": true,
-                "reveal": "always",
+                "echo": false,
+                "reveal": "never",
                 "focus": false,
                 "panel": "shared",
                 "showReuseMessage": true,
                 "clear": false
             },
-        }
+        },
     ]
 }
