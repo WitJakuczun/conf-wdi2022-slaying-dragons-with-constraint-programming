@@ -1,0 +1,6 @@
+ipykernel
+iminizinc
+minizinc
+nest_asyncio
+argparse
+jupyter
