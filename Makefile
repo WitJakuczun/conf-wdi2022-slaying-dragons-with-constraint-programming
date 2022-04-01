@@ -1,8 +1,10 @@
-conf-wdi2022-slaying-dragons-with-constraint-programming-introduction-examples.ipynb: conf-wdi2022-slaying-dragons-with-constraint-programming-introduction-examples.jl
-	julia --project=. --eval="using Literate; Literate.notebook(\"$?\", \".\"; mdstrings=true)"
+NB_FILES = conf-wdi2022-slaying-dragons-with-constraint-programming-introduction.ipynb conf-wdi2022-slaying-dragons-with-constraint-programming-introduction-examples.ipynb
 
-conf-wdi2022-slaying-dragons-with-constraint-programming-introduction.ipynb: conf-wdi2022-slaying-dragons-with-constraint-programming-introduction.jl
-	julia --project=. --eval="using Literate; Literate.notebook(\"$?\", \".\"; mdstrings=true)"
+all: $(NB_FILES)
+	@echo $(inputs)
+
+%.ipynb: %.jl
+	julia --project=. --eval="using Literate; Literate.notebook(\"$^\", \".\"; mdstrings=true)"
 
 clean:
 	rm conf-wdi2022-slaying-dragons-with-constraint-programming-introduction.ipynb
