@@ -4,3 +4,4 @@ minizinc
 nest_asyncio
 argparse
 jupyter
+notebook
