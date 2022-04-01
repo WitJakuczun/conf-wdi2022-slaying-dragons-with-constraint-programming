@@ -46,10 +46,12 @@ Repository name is [conf-wdi2022-slaying-dragons-with-constraint-programming](ht
 using ConstraintSolver
 const CS=ConstraintSolver
 using JuMP
+
 #nb # %% {"slideshow": {"slide_type":"slide"}}
 md"""
 ### First constraint $x + y = z$
 """
+
 #
 function first_constraint()
     m = Model(optimizer_with_attributes(CS.Optimizer, "backtrack"=>false))
