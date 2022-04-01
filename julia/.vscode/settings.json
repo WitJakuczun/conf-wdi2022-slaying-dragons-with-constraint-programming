@@ -1,0 +1,6 @@
+{
+    "jupyter.jupyterServerType": "local",
+    "jupyter.disableJupyterAutoStart": true,
+    "cmake.configureOnOpen": false,
+    "AllAutocomplete.showCurrentDocument": false
+}

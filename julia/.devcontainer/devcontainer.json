@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.206.0/containers/python-3
+{
+	"name": "Julia v 1.7.2",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"julialang.language-julia-insider"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"julialang.language-julia-insider",
+		"singularitti.vscode-julia-formatter",
+		"kahole.magit",
+		"bodil.file-browser",
+		"donjayamanne.githistory",
+		"eamodio.gitlens",
+		"atishay-jain.all-autocomplete",
+		"ionutvmi.path-autocomplete",
+		"christian-kohler.path-intellisense"
+	],
+	"mounts": [
+  		"source=${localEnv:HOME}/projects,target=/home/projects,type=bind,consistency=cached",
+  		"source=${localEnv:HOME}/.ssh,target=/home/user/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.julia,target=/home/user/.julia,type=bind,consistency=cached"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [5000],
+
+	//Uncomment if you want to have access to GPU
+	//"runArgs": ["--gpus=all"]
+
+	//"workspaceFolder": "/home/projects/${localWorkspaceFolderBasename}"
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	//"remoteUser": "user"
+}
