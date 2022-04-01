@@ -6,7 +6,7 @@
         {
             "label": "compile slides",
             "type": "shell",
-            "command": "./compile.sh ${fileBasenameNoExtension}",
+            "command": "make",
             "presentation": {
                 "echo": false,
                 "reveal": "never",
