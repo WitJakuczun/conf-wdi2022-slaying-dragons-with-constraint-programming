@@ -16,6 +16,24 @@ In constraint programming, users **declaratively** state the **constraints** on
 the feasible solutions for a set of **decision variables**.
 """
 
+# ## Travelling Salesman Problem with Constraint Programming
+
+md"""
+```Prolog
+Cities = [X1,X2,X3,X4,X5,X6,X7],
+element(X1,[ 0, 4, 8,10, 7,14,15],C1),
+element(X2,[ 4, 0, 7, 7,10,12, 5],C2),
+element(X3,[ 8, 7, 0, 4, 6, 8,10],C3),
+element(X4,[10, 7, 4, 0, 2, 5, 8],C4),
+element(X5,[ 7,10, 6, 2, 0, 6, 7],C5),
+element(X6,[14,12, 8, 5, 6, 0, 5],C6),
+element(X7,[15, 5,10, 8, 7, 5, 0],C7),
+Cost #= C1+C2+C3+C4+C5+C6+C7,
+circuit(Cities),
+labeling([minimize(Cost)], Cities).
+```
+"""
+
 #nb # %% {"slideshow": {"slide_type": "slide"}}
 md"""
 ## Components of Constraint Programming programm
@@ -36,7 +54,7 @@ md"""
 
 
 #nb # %% {"slideshow": {"slide_type": "slide"}}
-# ##Variables
+# ## Variables
 
 #nb # %% {"slideshow": {"slide_type": "fragment"}}
 md"""
@@ -165,4 +183,74 @@ md"""
 * Easily can generate all or many solutions. :
 * White-box approach where programmer controls search process.
 * Both approaches can cooperate
+"""
+
+# ## Solvers
+
+# ### Open-source solvers
+
+#nb # %% {"slideshow": {"slide_type":"fragment"}}
+md"""
+The not complete list of open source constraint programming solvers:
+
+* [Choco solver](https://choco-solver.org/)
+* [ECLiPSe](https://eclipseclp.org/)
+* [Gecode](https://www.gecode.org/)
+* [OR-Tools](https://developers.google.com/optimization)
+* [MiniZinc](https://www.minizinc.org/)
+* [Picat](http://picat-lang.org/)
+
+"""
+
+# ### Commercial solvers
+
+md"""
+I am aware of two commercial constraint programming solvers:
+
+* [CPLEX CP Optimizer](https://www.ibm.com/pl-pl/analytics/cplex-cp-optimizer)
+* [Sicstus Prolog](https://sicstus.sics.se/)
+"""
+
+# ## What is Constraint Programming good for?
+
+md"""
+Constraint programming is very effective for:
+
+* scheduling problems
+* time-tabling problems
+* assignment problems
+* configuration problems
+"""
+
+md"""
+*Rule of thumb* to choose Constraint Programming approach:
+
+* You need "only" feasible solution
+* You need more than one feasible/optimal solutions
+* You have effective search strategy
+"""
+
+# ## Literature
+
+# ### Books
+
+md"""
+I have following books on my shelf:
+
+* [A Quick and Gentle Guide to Constraint Logic Programming via ECLiPSe](http://www.anclp.pl/)
+    * There both polish and english version
+* [Programming with Constraints](https://mitpress.mit.edu/books/programming-constraints)
+* [Principles of Constraint Programming](https://www.amazon.pl/Principles-Constraint-Programming-Krzysztof-Apt/dp/0521125499/ref=asc_df_0521125499/?tag=plshogostdde-21&linkCode=df0&hvadid=504303969727&hvpos=&hvnetw=g&hvrand=14782899227594433475&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=20853&hvtargid=pla-423031644129&psc=1)
+* [Constraint-Based Scheduling: Applying Constraint Programming to Scheduling Problems](https://www.amazon.pl/Constraint-Based-Scheduling-Applying-Constraint-Programming/dp/1461355745/ref=sr_1_3?__mk_pl_PL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3RRXAOTFUU4YG&keywords=constraint+programming&qid=1648842560&sprefix=constraint+programming%2Caps%2C82&sr=8-3)
+* [Essentials of Constraint Programming](https://www.amazon.pl/Essentials-Constraint-Programming-Thom-Fr%C3%BChwirth/dp/3642087124/ref=sr_1_6?__mk_pl_PL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3RRXAOTFUU4YG&keywords=constraint+programming&qid=1648842604&sprefix=constraint+programming%2Caps%2C82&sr=8-6)
+* [Constraint Processing](https://www.amazon.pl/Constraint-Processing-Rina-Dechter/dp/1558608907/ref=sr_1_75?__mk_pl_PL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3RRXAOTFUU4YG&keywords=constraint+programming&qid=1648842680&sprefix=constraint+programming%2Caps%2C82&sr=8-75)
+* [Constraint Logic Programming using Eclipse](https://www.amazon.pl/Apt-Constraint-Logic-Programming-Eclipse/dp/0521866286/ref=sr_1_86?__mk_pl_PL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3RRXAOTFUU4YG&keywords=constraint+programming&qid=1648842737&sprefix=constraint+programming%2Caps%2C82&sr=8-86)
+"""
+
+# ### Blogs
+
+md"""
+I read following blogs:
+
+* [http://hakank.org/constraint_programming_blog/](http://hakank.org/constraint_programming_blog/)
 """
