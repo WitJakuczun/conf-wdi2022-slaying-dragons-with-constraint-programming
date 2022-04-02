@@ -17,6 +17,8 @@ md"""
 which would apply to them and take into account their unique features (e.g. multiple decision criteria, user-defined constraints)
 * **Large scale problems, characterized by large sets of data, variables and constraints.** Existing algorithms do not always scale up, some decomposition aspects must be considered (e.g. problem structure, hybrid models, cooperation between solvers)
 * **Computationally difficult problems**, i.e. NP-hard problems whose solving requires anyhow a lot of knowledge and experience.
+
+More in this paper [Large Scale Combinatorial Optimization: A Methodological Viewpoint](https://hal.umontpellier.fr/hal-01742376/document)
 """
 
 #nb # %% {"slideshow": {"slide_type": "slide"}}
