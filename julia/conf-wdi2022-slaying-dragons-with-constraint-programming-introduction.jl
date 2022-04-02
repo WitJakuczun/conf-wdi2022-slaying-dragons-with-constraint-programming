@@ -1,3 +1,24 @@
+
+#nb # %% {"slideshow": {"slide_type": "slide"}}
+md"""
+![](images/Jakuczun-Wit.png)
+"""
+
+# # What about the dragons?
+
+md"""
+![](images/Rabbitattack.jpeg)
+"""
+
+# ## Large Scale Combinatorial Optimization problems (LSCOs).
+
+md"""
+* **Real world problems which do not fit into well-defined problem categories.** There is no eficient solution models publicized in the research literature
+which would apply to them and take into account their unique features (e.g. multiple decision criteria, user-defined constraints)
+* **Large scale problems, characterized by large sets of data, variables and constraints.** Existing algorithms do not always scale up, some decomposition aspects must be considered (e.g. problem structure, hybrid models, cooperation between solvers)
+* **Computationally difficult problems**, i.e. NP-hard problems whose solving requires anyhow a lot of knowledge and experience.
+"""
+
 #nb # %% {"slideshow": {"slide_type": "slide"}}
 # # What is constraint programming?
 
@@ -17,6 +38,12 @@ the feasible solutions for a set of **decision variables**.
 """
 
 # ## Travelling Salesman Problem with Constraint Programming
+
+md"""
+![](images/monalisa1.webp)
+
+Source: [https://www.wired.com/2013/01/traveling-salesman-problem/](https://www.wired.com/2013/01/traveling-salesman-problem/)
+"""
 
 md"""
 ```Prolog
@@ -54,7 +81,7 @@ md"""
 
 
 #nb # %% {"slideshow": {"slide_type": "slide"}}
-# ## Variables
+# ### Variables
 
 #nb # %% {"slideshow": {"slide_type": "fragment"}}
 md"""
@@ -81,7 +108,7 @@ it can take.
 
 #nb # %% {"slideshow": {"slide_type":"slide"}}
 md"""
-## Constraints
+### Constraints
 """
 
 #nb # %% {"slideshow": {"slide_type":"fragment"}}
@@ -108,7 +135,7 @@ the constraint is triggered by how its variables were modified. Exemplary events
 
 #nb # %% {"slideshow": {"slide_type":"slide"}}
 md"""
-## Search process - general introduction
+### Search process - general introduction
 """
 
 #nb # %% {"slideshow": {"slide_type":"fragment"}}
@@ -129,16 +156,16 @@ and tries next combination.
 md"""
 It is split into two main phases that interleave:
 
-* Constraint propagation - it is a process in which constraints
+* **Constraint propagation** - it is a process in which constraints
   are triggering each other by changing domains of variables. This process is mean to be
   done automatically. We can influence it by constraints.
-* Labelling - it is a process in which variables are being assigned values from
+* **Labelling** - it is a process in which variables are being assigned values from
   their domains.
 """
 
 #nb # %% {"slideshow": {"slide_type":"slide"}}
 md"""
-## Search process - pseudocode
+### Search process - pseudocode
 """
 
 #nb # %% {"slideshow": {"slide_type":"fragment"}}
@@ -156,62 +183,7 @@ md"""
     1. Backtrack all changes to last instantiated variable and jump to 4.A and select next value
 """
 
-#nb # %% {"slideshow": {"slide_type":"slide"}}
-md"""
-## Example of search tree for [queens problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle).
-"""
-
-
-#nb # %% {"slideshow": {"slide_type":"fragment"}}
-md"""
-![](http://hakank.org/minizinc/cp_viz_queens8.png)
-
-Source image [MiniZinc version 1.2: More about CP-Viz and some models changed](http://www.hakank.org/constraint_programming_blog/minizinczinc/#:~:text=MiniZinc%20version%201.2%3A%20More%20about%20CP%2DViz%20and%20some%20models%20changed)
-"""
-
-
-#nb # %% {"slideshow": {"slide_type":"slide"}}
-md"""
-## Constraint programming vs Mixed Integer Programming
-"""
-
-#nb # %% {"slideshow": {"slide_type":"fragment"}}
-md"""
-* Easily handles complex/non-linear constraints.
-* More expressive thanks to *constraints are functions* approach.
-* Best for finding feasible (not optimal) solutions.
-* Easily can generate all or many solutions. :
-* White-box approach where programmer controls search process.
-* Both approaches can cooperate
-"""
-
-# ## Solvers
-
-# ### Open-source solvers
-
-#nb # %% {"slideshow": {"slide_type":"fragment"}}
-md"""
-The not complete list of open source constraint programming solvers:
-
-* [Choco solver](https://choco-solver.org/)
-* [ECLiPSe](https://eclipseclp.org/)
-* [Gecode](https://www.gecode.org/)
-* [OR-Tools](https://developers.google.com/optimization)
-* [MiniZinc](https://www.minizinc.org/)
-* [Picat](http://picat-lang.org/)
-
-"""
-
-# ### Commercial solvers
-
-md"""
-I am aware of two commercial constraint programming solvers:
-
-* [CPLEX CP Optimizer](https://www.ibm.com/pl-pl/analytics/cplex-cp-optimizer)
-* [Sicstus Prolog](https://sicstus.sics.se/)
-"""
-
-# ## What is Constraint Programming good for?
+# # What is Constraint Programming good for?
 
 md"""
 Constraint programming is very effective for:
@@ -228,11 +200,56 @@ md"""
 * You need "only" feasible solution
 * You need more than one feasible/optimal solutions
 * You have effective search strategy
+* MIP is not working for your problem
+* Highly non-linear or complex constraints
 """
 
-# ## Literature
+#nb # %% {"slideshow": {"slide_type":"slide"}}
+md"""
+## Constraint programming vs Mixed Integer Programming
+"""
 
-# ### Books
+#nb # %% {"slideshow": {"slide_type":"fragment"}}
+md"""
+* Easily handles complex/non-linear constraints.
+* More expressive thanks to *constraints are functions* approach.
+* Best for finding feasible (not optimal) solutions.
+* Can struggle with optimization problems.
+* Easily can generate all or many solutions. :
+* White-box approach where programmer controls search process.
+* Both approaches can cooperate
+"""
+
+# # Solvers
+
+# ## Open-source solvers
+
+#nb # %% {"slideshow": {"slide_type":"fragment"}}
+md"""
+The not complete list of open source constraint programming solvers:
+
+* [Choco solver](https://choco-solver.org/)
+* [ECLiPSe](https://eclipseclp.org/)
+* [Gecode](https://www.gecode.org/)
+* [OR-Tools](https://developers.google.com/optimization)
+* [MiniZinc](https://www.minizinc.org/)
+* [Picat](http://picat-lang.org/)
+
+"""
+
+# ## Commercial solvers
+
+md"""
+I am aware of two commercial constraint programming solvers:
+
+* [CPLEX CP Optimizer](https://www.ibm.com/pl-pl/analytics/cplex-cp-optimizer)
+* [Sicstus Prolog](https://sicstus.sics.se/)
+"""
+
+
+# # Literature
+
+# ## Books
 
 md"""
 I have following books on my shelf:
@@ -247,10 +264,23 @@ I have following books on my shelf:
 * [Constraint Logic Programming using Eclipse](https://www.amazon.pl/Apt-Constraint-Logic-Programming-Eclipse/dp/0521866286/ref=sr_1_86?__mk_pl_PL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3RRXAOTFUU4YG&keywords=constraint+programming&qid=1648842737&sprefix=constraint+programming%2Caps%2C82&sr=8-86)
 """
 
-# ### Blogs
+# ## Blogs
 
 md"""
 I read following blogs:
 
 * [http://hakank.org/constraint_programming_blog/](http://hakank.org/constraint_programming_blog/)
+"""
+
+# # Materials for you
+
+md"""
+All code is available at my github account [https://github.com/WitJakuczun/](https://github.com/WitJakuczun).
+
+Repository name is [conf-wdi2022-slaying-dragons-with-constraint-programming](https://github.com/WitJakuczun/conf-wdi2022-slaying-dragons-with-constraint-programming)
+
+Contact information:
+
+* LinkedIn profile: [https://www.linkedin.com/in/jakuczunwit/](https://www.linkedin.com/in/jakuczunwit/)
+* email: [wit.jakuczun@gmail.com](wit.jakuczun@gmail.com)
 """

@@ -36,13 +36,6 @@ I will present how constraint programming works for the following feasibility pr
 * Task is to find all solutions that respect given constraints.
 """
 
-#nb # %% {"slideshow": {"slide_type":"fragment"}}
-md"""
-All code is available at my github account [github.com/WitJakuczun/](https://github.com/WitJakuczun).
-Repository name is [conf-wdi2022-slaying-dragons-with-constraint-programming](https://github.com/WitJakuczun/conf-wdi2022-slaying-dragons-with-constraint-programming)
-"""
-#
-
 using ConstraintSolver
 const CS=ConstraintSolver
 using JuMP
